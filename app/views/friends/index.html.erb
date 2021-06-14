@@ -1,0 +1,18 @@
+<h1>List of all Friends</h1>
+<table>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th colspan=3>Action</th>
+    </tr>
+    <% @friends.each do |friend| %>      
+        <tr>
+            <td><%= friend.fname %></td>
+            <td><%= friend.lname %></td>
+            <td><%= link_to "Show", friend_path(friend) %></td>
+            <td><%= link_to "Edit", edit_friend_path(friend) %></td>
+            <td><%= link_to "Destroy", friend_path(friend), method: :delete, data: { confirm: 'Are you sure?'}  %></td>
+        </tr>
+    <% end %>
+    <h3>Add new friend, <%= link_to "New friend", new_friend_path %></h3>
+</table>

@@ -1,0 +1,5 @@
+<h1>Friend details</h1>
+<%= "hey #{@friend.fname}" %></br>
+<%= link_to "Edit", edit_friend_path(@friend) %> |
+<%= link_to "Delete", friend_path(@friend), method: :delete, data: { confirm: 'Are you sure?'} %> |
+<%= link_to "Home page", friends_path %>
